@@ -17,7 +17,6 @@ interface Repository {
 }
 
 const Dashboard: React.FC = () => {
-
     const [newRepo, setNewRepo] = useState('');
     const [inputError, setInputError] = useState(''); 
     const [repositories, setRepositories] = useState<Repository[]>(() => {
@@ -28,7 +27,6 @@ const Dashboard: React.FC = () => {
         } else {
             return []; 
         }
-
     }); 
 
     useEffect(() => {
@@ -53,9 +51,7 @@ const Dashboard: React.FC = () => {
         setInputError(''); 
 
        } catch (Err) { 
-
             setInputError('Erro na busca por esse repositório'); 
-       
         }
     }
 
@@ -81,20 +77,18 @@ const Dashboard: React.FC = () => {
                         key={repository.full_name} 
                         to={`/repositories/${repository.full_name}`}
                     >
-                            <img
-                                src={repository.owner.avatar_url}
-                                alt={repository.owner.login}
-                            />
-                            <div>
-                                <strong>{repository.full_name}</strong>
-                                <p>{repository.description}</p>
-                            </div>
-                
+                        <img
+                            src={repository.owner.avatar_url}
+                            alt={repository.owner.login}
+                        />
+                        <div>
+                            <strong>{repository.full_name}</strong>
+                            <p>{repository.description}</p>
+                        </div>
                         <FiChevronRight size={20} />
                     </Link>
                 ))}
             </Repositories>
-
         </>
     );
 }

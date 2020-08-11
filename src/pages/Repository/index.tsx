@@ -13,7 +13,6 @@ const Repository: React.FC = () => {
     const { params } = useRouteMatch<RepositoryParams>(); 
     
     return (
-
         <>
             <Header>
                 <img src={logoImg} alt="Github Explorer" />
@@ -48,7 +47,6 @@ const Repository: React.FC = () => {
             </RepositoryInfo>
 
             <Issues>
-
                 <Link to={'eijeie'} >
                     <div>
                         <strong>teste</strong>
@@ -56,9 +54,7 @@ const Repository: React.FC = () => {
                     </div>
                     <FiChevronRight size={20} />
                 </Link>
-
             </Issues>
-
         </> 
     );
 }
